@@ -47,4 +47,11 @@ ul {
     text-decoration: line-through;
 }
 
+/* Icons */
+
+.bi-x {
+    cursor: pointer;
+    color: #F00;
+}
+
 /* Layout */

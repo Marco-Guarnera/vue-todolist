@@ -19,7 +19,12 @@ const app = Vue.createApp({
                 done: true
             }
         ]
-    })
+    }),
+    methods: {
+        deleteTask(i) {
+            this.toDoList.splice(i, 1);
+        }
+    }
 });
 
 app.mount("#app");
