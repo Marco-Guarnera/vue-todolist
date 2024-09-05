@@ -43,4 +43,8 @@ ul {
     flex-wrap: wrap;
 }
 
+.completed {
+    text-decoration: line-through;
+}
+
 /* Layout */

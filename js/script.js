@@ -1,10 +1,25 @@
 // Fase di preparazione
 
-// Variabili
-// Strutture dati
-// Funzioni
+const app = Vue.createApp({
+    name: "Vue To Do List",
+    data: () => ({
+        toDoList: [
+            {
+                txt: "Eat",
+                done: false
+            },
 
-// Fase di gestione eventi
-// Fase di raccolta dati
-// Fase di elaborazione
-// Fase di produzione
+            {
+                txt: "Drink",
+                done: false
+            },
+
+            {
+                txt: "Sleep",
+                done: true
+            }
+        ]
+    })
+});
+
+app.mount("#app");

@@ -22,7 +22,19 @@
 
 <body>
     <!-- Main -->
-    <main></main>
+    <main>
+        <div id="app" class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>To Do List</h1>
+                    <ul>
+                        <li :class="{completed: task.done}" v-for="(task, i) in toDoList">{{i + 1}} -
+                            {{task.txt}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
