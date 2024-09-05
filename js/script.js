@@ -3,6 +3,10 @@
 const app = Vue.createApp({
     name: "Vue To Do List",
     data: () => ({
+        newTask: {
+            txt: "",
+            done: false
+        },
         toDoList: [
             {
                 txt: "Eat",
@@ -21,8 +25,18 @@ const app = Vue.createApp({
         ]
     }),
     methods: {
-        deleteTask(i) {
-            this.toDoList.splice(i, 1);
+        addTask(newTask) {
+            this.toDoList.push(newTask);
+            this.clearNewTask();
+        },
+        clearNewTask() {
+            this.newTask = {
+                txt: "",
+                done: false
+            }
+        },
+        deleteTask(task) {
+            this.toDoList.splice(task, 1);
         }
     }
 });

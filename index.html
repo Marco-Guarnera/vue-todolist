@@ -33,6 +33,12 @@
                         <li :class="{completed: task.done}" v-for="(task, i) in toDoList">{{i + 1}} -
                             {{task.txt}} <i class="bi bi-x" @click="deleteTask(i)"></i></li>
                     </ul>
+                    <div class="form-floating">
+                        <input type="text" class="form-control" id="task" placeholder="New Task" v-model="newTask.txt"
+                            @keyup.enter="addTask(newTask)">
+                        <label for="task">New Task</label>
+                    </div>
+                    <button type="button" class="btn btn-primary" @click="addTask(newTask)">Add Task</button>
                 </div>
             </div>
         </div>
