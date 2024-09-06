@@ -30,8 +30,10 @@
                 <div class="col">
                     <h1>To Do List</h1>
                     <ul>
-                        <li :class="{completed: task.done}" v-for="(task, i) in toDoList">{{i + 1}} -
-                            {{task.txt}} <i class="bi bi-x" @click="deleteTask(i)"></i></li>
+                        <li :class="{completed: task.done}" v-for="(task, i) in toDoList">
+                            <span @click="completeTask(task)">{{i + 1}} - {{task.txt}}</span>
+                            <i class="bi bi-x" @click="deleteTask(i)"></i>
+                        </li>
                     </ul>
                     <div class="form-floating">
                         <input type="text" class="form-control" id="task" placeholder="New Task" v-model="newTask.txt"

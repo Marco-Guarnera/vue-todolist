@@ -26,14 +26,19 @@ const app = Vue.createApp({
     }),
     methods: {
         addTask(newTask) {
-            this.toDoList.push(newTask);
-            this.clearNewTask();
+            if (newTask.txt) {
+                this.toDoList.push(newTask);
+                this.clearNewTask();
+            }
         },
         clearNewTask() {
             this.newTask = {
                 txt: "",
                 done: false
             }
+        },
+        completeTask(task) {
+            task.done = !task.done;
         },
         deleteTask(task) {
             this.toDoList.splice(task, 1);
